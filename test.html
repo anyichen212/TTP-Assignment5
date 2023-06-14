@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <select name="colors" id="colors" onchange="colorSelect()">
+        <option value="red" >red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+      </select>
+
+      <div class="box" id="box1" onclick="changeColor(this.id)" style="background-color: black; width: 200px;">
+        Box 1
+      </div>
+      <div class="box" id="box2" onclick="changeColor(this.id)" style="background-color: black; width: 200px;">
+        Box 2
+      </div>
+
+    <script src="scriptAC.js"></script>
+</body>
