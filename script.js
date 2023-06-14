@@ -34,8 +34,25 @@ function removeRow(){
     const grid = document.getElementById("grid");
     //get no of rows
     const rowCount = grid.rows.length;
+    //check no row
     if (rowCount > 1) {
         //delete the last row
         grid.deleteRow(-1);
+    }
+}
+
+function removeColumn() {
+    //get table by ID
+    const grid = document.getElementById("grid");
+    //get no of row
+    const rowCount = grid.rows.length;
+    //get no of col from the heading row
+    const columnCount = grid.rows[0].cells.length;
+    //check no column
+    if (columnCount > 1) {
+        for (let i = 0; i < rowCount; i++) {
+            //delete last cell in each row
+            grid.rows[i].deleteCell(-1);
+        }
     }
 }
