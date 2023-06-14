@@ -28,3 +28,14 @@ function addColumn(){
         cell = row.insertCell(-1);
     }
 }
+
+function removeRow(){
+    //get table by ID
+    const grid = document.getElementById("grid");
+    //get no of rows
+    const rowCount = grid.rows.length;
+    if (rowCount > 1) {
+        //delete the last row
+        grid.deleteRow(-1);
+    }
+}
