@@ -2,11 +2,11 @@
 
 let x = document.getElementById("colors");
 let color = x.value;
-x.style.backgroundColor = color
+//x.style.backgroundColor = color
 
 function colorSelect(){
     color = x.value;
-    x.style.backgroundColor = color;
+    //x.style.backgroundColor = color;
 }
 
 function changeColor(id){
