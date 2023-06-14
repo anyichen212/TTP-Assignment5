@@ -1,4 +1,5 @@
 function addRow() {
+
     //get table by ID
     const grid = document.getElementById("grid");
     //create a row ) -1 = below
@@ -9,4 +10,5 @@ function addRow() {
     for (let i = 0; i < colCount; i++) {
         let cell = row.insertCell(-1);
     }
+    //test
 }
