@@ -10,3 +10,8 @@ table, th, td {
 .btn {
     margin-top: 10px;
 }
+
+#colors{
+    margin: 10px;
+    font-size: 20px;
+}
