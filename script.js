@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", function(){
     //cell.onmousedown
 });
 
+
+
+
+
+
 //select color function
 function colorSelect(){
     color = x.value;
@@ -137,6 +142,28 @@ function changeAllUncolorCell(){
     for(let cell of cells){
         if(cell.style.backgroundColor === ""){
             cell.style.backgroundColor = color;
+        }
+    }
+}
+
+function changeAllCells(){
+    //get all cells in an array
+    let cells = document.querySelectorAll("th, td");
+    //loop thru every cell and check if their background color is empty
+    for(let cell of cells){
+        
+            cell.style.backgroundColor = color;
+        
+    }
+}
+
+function clearAll(){
+//gets all cells
+    let cells = document.querySelectorAll("th, td");
+//check for a colored cell and changes back the color
+    for(let cell of cells){
+        if(cell.style.backgroundColor === color ){
+            cell.style.backgroundColor = "";
         }
     }
 }
