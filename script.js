@@ -1,5 +1,6 @@
 let x;
 let color;
+let isMouseDown = false;
 
 //run when page load
 document.addEventListener("DOMContentLoaded", function(){
@@ -10,12 +11,43 @@ document.addEventListener("DOMContentLoaded", function(){
     cell.onclick = function changeColor(){
         cell.style.backgroundColor = color;
     };
+
+    //following 3 eventlisteners will be included in addRow, addCol functions
+    //these will help in newly created cells.
+    //when a user pressed the mouse down, start affecting the cells 
+    cell.addEventListener("mousedown", whenMouseDown);
+    //while pressing the mouse down, for hovering effect
+    cell.addEventListener("mouseover", whenMouseOver);
+    //when a user released the mouse, change the pressing the mouse function
+    //to false
+    cell.addEventListener("mouseup", function(){
+        isMouseDown = false;
+    })
+    //cell.onmousedown
 });
 
 //select color function
 function colorSelect(){
     color = x.value;
 }
+//function on pressing the mouse down, so is affecting the cell
+function whenMouseDown(){
+    isMouseDown = true;
+    changeColor.call(this)
+}
+//helper for whenMouseDown function for affect in pressing down and hovering
+function whenMouseOver(){
+    //check if the mouse is pressing down
+    if(isMouseDown){
+        changeColor.call(this);
+    }
+}
+//changing the color of cell
+function changeColor() {
+    if (color !== "") {
+      this.style.backgroundColor = color;
+    }
+  }
 
 function addRow() {
 
@@ -33,6 +65,11 @@ function addRow() {
         cell.onclick = function changeColor(){
             cell.style.backgroundColor = color;
         };
+        cell.addEventListener("mousedown", whenMouseDown);
+        cell.addEventListener("mouseover", whenMouseOver);
+        cell.addEventListener("mouseup", function(){
+            isMouseDown = false;
+        })
     }
     //test
     
@@ -56,6 +93,11 @@ function addColumn(){
         cell.onclick = function changeColor(){
             cell.style.backgroundColor = color;
         };
+        cell.addEventListener("mousedown", whenMouseDown);
+        cell.addEventListener("mouseover", whenMouseOver);
+        cell.addEventListener("mouseup", function(){
+            isMouseDown = false;
+        })
     }
 }
 
