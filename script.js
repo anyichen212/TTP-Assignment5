@@ -104,6 +104,17 @@ function changeAllUncolorCell(){
     }
 }
 
+function changeAllCells(){
+    //get all cells in an array
+    let cells = document.querySelectorAll("th, td");
+    //loop thru every cell and check if their background color is empty
+    for(let cell of cells){
+        
+            cell.style.backgroundColor = color;
+        
+    }
+}
+
 function clearAll(){
 //gets all cells
     let cells = document.querySelectorAll("th, td");
