@@ -12,3 +12,12 @@ function colorSelect(){
 function changeColor(id){
     document.getElementById(id).style.backgroundColor = color;
 }
+
+function changeAllUncolorCell(){
+    let cells = document.querySelectorAll("th");
+    for(let cell of cells){
+        if(cell.style.backgroundColor === ""){
+            cell.style.backgroundColor = color
+        }
+    }
+}

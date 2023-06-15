@@ -3,7 +3,7 @@ let color;
 
 //run when page load
 document.addEventListener("DOMContentLoaded", function(){
-    let cell = document.getElementById("grid").rows[0];
+    let cell = document.querySelector("th");
     //change cell color by click;
     x = document.getElementById("colors")
     color = x.value;
@@ -50,7 +50,7 @@ function addColumn(){
         //get each row
         let row = grid.rows[i];
         //insert cell in the last pos
-        cell = row.insertCell(-1);
+        let cell = row.insertCell(-1);
 
         //change cell color by click;
         cell.onclick = function changeColor(){
@@ -83,6 +83,18 @@ function removeColumn() {
         for (let i = 0; i < rowCount; i++) {
             //delete last cell in each row
             grid.rows[i].deleteCell(-1);
+        }
+    }
+}
+
+//Fill all empty cells
+function changeAllUncolorCell(){
+    //get all cells in an array
+    let cells = document.querySelectorAll("th, td");
+    //loop thru every cell and check if their background color is empty
+    for(let cell of cells){
+        if(cell.style.backgroundColor === ""){
+            cell.style.backgroundColor = color;
         }
     }
 }
