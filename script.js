@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function(){
     };
 });
 
+
+
+
+
+
 //select color function
 function colorSelect(){
     color = x.value;
@@ -95,6 +100,17 @@ function changeAllUncolorCell(){
     for(let cell of cells){
         if(cell.style.backgroundColor === ""){
             cell.style.backgroundColor = color;
+        }
+    }
+}
+
+function clearAll(){
+
+    let cells = document.querySelectorAll("th, td");
+
+    for(let cell of cells){
+        if(cell.style.backgroundColor === color ){
+            cell.style.backgroundColor = "";
         }
     }
 }
