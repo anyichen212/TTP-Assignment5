@@ -105,9 +105,9 @@ function changeAllUncolorCell(){
 }
 
 function clearAll(){
-
+//gets all cells
     let cells = document.querySelectorAll("th, td");
-
+//check for a colored cell and changes back the color
     for(let cell of cells){
         if(cell.style.backgroundColor === color ){
             cell.style.backgroundColor = "";
